@@ -17,7 +17,8 @@
             "matchStringsStrategy": "any",
             "datasourceTemplate": "github-releases",
             "depNameTemplate": "python",
-            "packageNameTemplate": "actions/python-versions"
+            "packageNameTemplate": "actions/python-versions",
+            "versioningTemplate": "npm"
         }
     ],
     "packageRules": [
@@ -26,7 +27,8 @@
             "matchPackageNames": [
                 "actions/python-versions"
             ],
-            "allowedVersions": "<3.14.0"
+            "allowedVersions": "< 3.14.0",
+            "rangeStrategy": "replace"
         }
     ]
 }
