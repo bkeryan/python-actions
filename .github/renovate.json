@@ -16,7 +16,6 @@
             ],
             "matchStringsStrategy": "any",
             "datasourceTemplate": "github-releases",
-            "depNameTemplate": "python",
             "packageNameTemplate": "actions/python-versions",
             "versioningTemplate": "npm"
         }
