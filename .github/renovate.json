@@ -5,7 +5,7 @@
     ],
     "customManagers": [
         {
-            // Update setup-python default Python version.
+            "description": "Update setup-python default Python version.",
             "customType": "regex",
             "managerFilePatterns": [
                 "/^setup-python\\/(?:action.yml|README.md)$/"
@@ -19,6 +19,15 @@
             "packageNameTemplate": "actions/python-versions",
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "npm"
+        }
+    ],
+    "packageRules": [
+        {
+            "description": "Update setup-python default Python version on Sundays.",
+            "matchPackageNames": [
+                "actions/python-versions"
+            ],
+            "schedule": ["* * * * 0"]
         }
     ]
 }
