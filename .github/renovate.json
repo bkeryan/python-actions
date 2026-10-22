@@ -5,15 +5,20 @@
     ],
     "customManagers": [
         {
-            // Update "default: <currentVersion>" in the same way as customManagers:githubActionsVersions
+            // Update setup-python default Python version.
             "customType": "regex",
             "managerFilePatterns": [
-                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
-                "/(^|/)action\\.ya?ml$/"
+                "/^setup-python\\/(?:action.yml|README.md)$/"
             ],
             "matchStrings": [
-                "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (?:lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+default\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
-            ]
+                "default\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s",
+                "By default, this action installs Python (?<currentValue>.+?)\\.\\s"
+            ],
+            "matchStringsStrategy": "any",
+            "depNameTemplate": "python",
+            "packageNameTemplate": "actions/python-versions",
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "npm"
         }
     ]
 }
