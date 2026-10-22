@@ -15,7 +15,6 @@
                 "By default, this action installs Python (?<currentValue>.+?)\\.\\s"
             ],
             "matchStringsStrategy": "any",
-            "depNameTemplate": "python",
             "packageNameTemplate": "actions/python-versions",
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "npm"
@@ -23,11 +22,11 @@
     ],
     "packageRules": [
         {
-            "description": "Update setup-python default Python version on Sundays.",
+            "description": "Update setup-python default Python version to latest 3.13.x.",
             "matchPackageNames": [
                 "actions/python-versions"
             ],
-            "schedule": ["* * * * 0"]
+            "allowedVersions": "<3.14.0"
         }
     ]
 }
