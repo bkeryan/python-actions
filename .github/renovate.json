@@ -15,9 +15,9 @@
                 "By default, this action installs Python (?<currentValue>.+?)\\.\\s"
             ],
             "matchStringsStrategy": "any",
-            "packageNameTemplate": "actions/python-versions",
             "datasourceTemplate": "github-releases",
-            "versioningTemplate": "npm"
+            "depNameTemplate": "python",
+            "packageNameTemplate": "actions/python-versions"
         }
     ],
     "packageRules": [
